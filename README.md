@@ -74,10 +74,10 @@ The frontend will start on:
 http://localhost:5173
 
 ## Pages
-###Create Task Page (/)
+### Create Task Page (/)
 Fill out task details and submit.
 
-###Task Success Page (/success)
+### Task Success Page (/success)
 Shows the created task details after submission.
 
 ## Notes
