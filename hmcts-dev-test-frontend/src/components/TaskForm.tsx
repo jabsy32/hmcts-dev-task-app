@@ -34,6 +34,13 @@ export default function TaskForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // prevent users from creating task with a past date/time
+    const dueDateValue = new Date(form.dueDate);
+    if (dueDateValue < new Date()) {
+      alert('Due date cannot be in the past');
+      return;
+    }
+
     try {
       const createdTask = await createTask(form);
       navigate('/success', { state: { task: createdTask } });
@@ -111,6 +118,7 @@ export default function TaskForm() {
               name="dueDate"
               required
               value={form.dueDate}
+              min={new Date().toISOString().slice(0, 16)}
               onChange={handleChange}
               className="w-full rounded border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
