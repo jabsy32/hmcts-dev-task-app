@@ -31,10 +31,33 @@ From the `hmcts-dev-test-backend` folder, run:
 The backend will start on:
 http://localhost:4000
 
-H2 Console (in-memory database for tests and development):
+## H2 Console (in-memory database for tests and development):
+
+The H2 console allows you to view and query the in-memory database used by the application during development or testing.
+
+Access:
 http://localhost:4000/h2-console
 
-### API Endpoints
+### Steps to use:
+
+Open the URL above in your browser.
+
+Fill in the login details (these are typical defaults; adjust if your application has different settings):
+
+- Driver Class: org.h2.Driver
+- JDBC URL: jdbc:h2:mem:testdb (replace testdb with your DB name if different)
+- Username: sa
+- Password: (leave blank unless configured)
+
+Click Connect.
+
+### Once connected, you can:
+
+- Browse tables.
+-Run SQL queries.
+- Inspect data created during tests or development.
+
+## API Endpoints
 GET /tasks/home – Test connection, returns "Welcome"
 
 POST /tasks – Create a new task
