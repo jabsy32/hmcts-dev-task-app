@@ -53,10 +53,14 @@ export default function TaskForm() {
         </h1>
 
         <div className="mb-4">
-          <label className="mb-2 block font-semibold text-gray-700">
+          <label
+            htmlFor="title"
+            className="mb-2 block font-semibold text-gray-700"
+          >
             Title
           </label>
           <input
+            id="title"
             name="title"
             required
             value={form.title}
@@ -66,10 +70,14 @@ export default function TaskForm() {
         </div>
 
         <div className="mb-4">
-          <label className="mb-2 block font-semibold text-gray-700">
+          <label
+            htmlFor="description"
+            className="mb-2 block font-semibold text-gray-700"
+          >
             Description
           </label>
           <textarea
+            id="description"
             name="description"
             value={form.description}
             onChange={handleChange}

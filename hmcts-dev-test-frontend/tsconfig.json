@@ -1,7 +1,15 @@
 {
-  "files": [],
+  "files": [
+    "node_modules/vitest/globals.d.ts"
+  ],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+
+  "compilerOptions": {
+    "types": ["vitest/globals", "vite/client", "node"],
+    "jsx": "react"
+  },
+  "include": ["src/**/*.{test,spec}.{js,ts,jsx,tsx}"]
 }
